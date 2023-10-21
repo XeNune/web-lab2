@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>История Apple</title>
+  <link rel="icon" type="image/png" href="favicon.png" />
+  <link rel="stylesheet" type="text/css" href="style.css" media="screen">
+  <script>
+    // JavaScript код для вывода информации о последней модификации документа
+    document.addEventListener("DOMContentLoaded", function() {
+      var lastModified = new Date(document.lastModified);
+      alert("Последняя модификация: " + lastModified);
+    });
+  </script>
+</head>
+<body>
+  <div class="header">
+    <h1>История Apple</h1>
+  </div>
+  <div class="text">
+    <main>
+      <p id="firstParagraph" onmouseover="changeStyle(this)" onmouseout="restoreStyle(this)">
+        Apple Inc. - это одна из ведущих технологических компаний в мире, знаменитая своими инновациями и культовыми продуктами. История Apple началась в гараже Стива Джобса и Стива Возняка в 1976 году.
+      </p>
+      
+      <p id="secondParagraph" onmouseover="changeStyle(this)" onmouseout="restoreStyle(this)">
+        С тех пор Apple прошла долгий путь, выпуская такие иконичные продукты, как Macintosh, iPhone, iPad и многие другие. Компания также известна своим дизайном, операционной системой macOS и магазином приложений App Store.
+      </p>
+    
+      <script>
+        function changeStyle(elementId) {
+          var element = document.getElementById(elementId);
+          if (element) {
+            element.style.color = "blue";
+            element.style.fontFamily = "Arial, sans-serif";
+          }
+        }
+      
+        function restoreStyle(elementId) {
+          var element = document.getElementById(elementId);
+          if (element) {
+            element.style.color = "";
+            element.style.fontFamily = "";
+          }
+        }
+      </script>
+      
+      <h2>Ключевые события в истории Apple</h2>
+      <p class="news"><span class="date">01.04.1976 - </span>Основание Apple Inc.</p>
+      <p class="news"><span class="date">24.01.1984 - </span>Выход Macintosh</p>
+      <p class="news"><span class="date">29.06.2007 - </span>Представление iPhone</p>
+      <p class="news"><span class="date">03.04.2010 - </span>Запуск iPad</p>
+      <p class="news"><span class="date">10.07.2008 - </span>Открытие App Store</p>
+      <img src="src/Unknown.jpeg" alt="Рисунок 1" style="position: relative; top: 0px; z-index: 1; height: 100px;"name="рисунок1">
+      <img src="src/scara_wall.heic" alt="Рисунок 2" style="position: relative; top: 100px; z-index: 2; height: 100px;"name="рисунок2">
+      <img src="src/AdobeStock_79161609-scaled.jpeg" alt="Рисунок 3" style="position: relative; top: 200px; z-index: 3; height: 100px;"name="рисунок3">
+      <form name="f2">
+        <input type="button" value="Скрыть/Отобразить изображение" name="b3" onclick="hideImage()">
+      </form>
+      <form name="f3">
+        <input type="button" value="Поменять местами изображения" name="b4" onclick="swapImages()">
+      </form>
+    </main>
+  </div>
+  
+  <div class="menu">
+    <a class="menu-link" href="#">Window</a>
+    <a class="menu-link" href="#">Navigator</a>
+    <a class="menu-link" href="#">Location</a>
+    <a class="menu-link" href="#">Screen</a>
+  </div>
+
+  <div>
+  <table>
+    <tr>
+      <td class="table-cell" onmouseover="changeStyleTb(this)" onmouseout="restoreStyleTb(this)">1</td>
+      <td class="table-cell" onmouseover="changeStyleTb(this)" onmouseout="restoreStyleTb(this)">2</td>
+      <td class="table-cell" onmouseover="changeStyleTb(this)" onmouseout="restoreStyleTb(this)">3</td>
+      <td class="table-cell" onmouseover="changeStyleTb(this)" onmouseout="restoreStyleTb(this)">4</td>
+      <td class="table-cell" onmouseover="changeStyleTb(this)" onmouseout="restoreStyleTb(this)">5</td>
+    </tr>
+  </table>
+</div>
+  
+  <script>
+    function swapImages() {
+      const pic2 = document.getElementsByName('рисунок2')[0];
+      const pic3 = document.getElementsByName('рисунок3')[0];
+
+      const zIndex2 = pic2.style.zIndex;
+      const top2 = pic2.style.top;
+      const zIndex3 = pic3.style.zIndex;
+      const top3 = pic3.style.top;
+
+      pic2.style.zIndex = zIndex3;
+      pic2.style.top = top3;
+      pic3.style.zIndex = zIndex2;
+      pic3.style.top = top2;
+    }
+
+    function hideImage() {
+      const pic1 = document.getElementsByName('рисунок2')[0];
+      if (pic1.style.visibility === 'hidden') {
+        pic1.style.visibility = 'visible';
+      } else {
+        pic1.style.visibility = 'hidden';
+      }
+    }
+        function changeStyleTb(cell) {
+      cell.className = "table-cell-alternate";
+    }
+
+    function restoreStyleTb(cell) {
+      cell.className = "table-cell";
+    }
+    // Обработчик для кнопки "Navigator"
+    document.querySelector(".menu-link:nth-child(2)").addEventListener("click", function() {
+      var navigatorInfo = "User-Agent: " + navigator.userAgent + "\n";
+      navigatorInfo += "Платформа: " + navigator.platform + "\n";
+      alert(navigatorInfo);
+    });
+  
+    // Обработчик для кнопки "Location"
+    document.querySelector(".menu-link:nth-child(3)").addEventListener("click", function() {
+      var locationInfo = "Имя пользователя: " + location.hostname + "\n";
+      locationInfo += "Адрес загруженного документа: " + location.href;
+      alert(locationInfo);
+    });
+  
+    // Обработчик для кнопки "Screen"
+    document.querySelector(".menu-link:nth-child(4)").addEventListener("click", function() {
+      var screenInfo = "Ширина экрана: " + screen.width + " пикселей\n";
+      screenInfo += "Высота экрана: " + screen.height + " пикселей\n";
+      var confirmation = confirm(screenInfo);
+      if (confirmation) {
+        alert(screenInfo);
+      }
+    });
+    // Обработчик для кнопки "Window"
+    document.querySelector(".menu-link:nth-child(1)").addEventListener("click", function() {
+      var newWindow = window.open("", "NewWindow", "width=400,height=300");
+      newWindow.document.write("<h1>Новое окно</h1>");
+      newWindow.document.write("<p>Привет, это новое окно браузера!</p>");
+      setTimeout(function() {
+        newWindow.close();
+      }, 5000);
+    });
+    // меняет стиль
+    function changeStyle(element) {
+    if (element.id === "firstParagraph") {
+      element.style.color = "blue";
+      element.style.fontFamily = "Arial, sans-serif";
+    }
+    if (element.id === "secondParagraph") {
+      element.style.paddingRight = "3cm";
+      element.style.textIndent = "2.5cm";
+    }
+  }
+  // возвращет 
+  function restoreStyle(element) {
+    if (element.id === "firstParagraph") {
+      element.style.color = "";
+      element.style.fontFamily = "";
+    }
+    if (element.id === "secondParagraph") {
+      element.style.paddingRight = "";
+      element.style.textIndent = "";
+    }
+  }
+    
+  </script>
+
+</body>
+</html>

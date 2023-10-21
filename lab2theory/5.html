@@ -1,0 +1,20 @@
+<html>
+<meta charset="UTF-8">
+    <head>
+        <title>Объектная модель браузера</title>
+    <script type="text/javascript">
+        document.write("Платформа:"+navigator.platform+"<br> Кодовое имя бразуера:"+navigator.appCodeName+"<br> Браузер: "+navigator.appName+"<br> Версия: "+navigator.appVersion);
+        window.status="Мой документ";
+        //window.open("4.html", "Мой документ");
+        //window.close( );
+        window.alert("Сообщение"+window.status);
+        window.confirm("Вы не забыли выключить обогреватель?");
+        window.alert(location.protocol);
+        window.alert("Глубина цвета: "+ screen.colorDepth);
+        document.write(document.title);
+    </script>
+    </head>
+    <body onLoad= "document.vlinkColor='green';alert('Зеленые ссылки!');">
+
+    </body>
+</html>
